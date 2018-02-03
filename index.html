@@ -29,9 +29,11 @@
       }
       p {
         font-family: Verdana;
+        font-size: 0.8em;
+        color: #3e3e3e;
       }  
-      p > a {
-        color: green;
+      p > a, .top-links > a {
+        color: #016008;
       }
       img {
           max-width: 100%;
@@ -63,6 +65,7 @@
         order: 2;
         padding: 0.5em;
         margin-top:5px;
+        height: 100%;
       }
       header {
         height: 25%;
@@ -74,14 +77,20 @@
       header, footer, article, nav {
         padding: 0.5em;
       }
+      input {
+        margin-bottom: 10px;
+      }
       .top-title{
-        padding-left:10px;
+        padding-left: 10px;
       }
       .top-links {
         float: right;
       }
       .top-links > a {
-        padding-right:10px;
+        padding-right: 15px;
+        text-decoration: none;
+        font-family: Verdana;
+        font-size: 0.8em;
       }
       .topnav {
         overflow: hidden;
@@ -110,6 +119,8 @@
           font-family: bebasNeue;
           font-size: 1.1em;
           width: 10.5%;
+          font-size: 15px;
+          font-size: 1vw;
       }
 
       /* Change the color of links on hover */
@@ -160,9 +171,8 @@
 
       /* float right items */
       .banner-contents{
-        float:left
-        width: 40%;
-        padding: 5px;
+        float:right;
+        width: 50%;
       }
       .banner-text {
         font-size: 1.25em;
@@ -188,7 +198,7 @@
       .shop-body-title{
         text-transform: uppercase;
         font-family: bebasNeue;
-        font-size: 1.2em;
+        font-size: 1.5em;
         color: #016008;
       }
       .shop-body > p {
@@ -196,6 +206,39 @@
         -webkit-margin-after: 0px;
         -webkit-margin-start: 0px;
         -webkit-margin-end: 0px;
+      }
+      .widget-content{
+        padding: 5px;
+      }
+      .news-body{
+        padding-right: 5px;
+        color: #016008;
+        text-decoration: underline;
+      }
+      .news-footer{
+        padding-right:10px;
+        float: right;
+        font-style: italic;
+      }
+      .subscribe-form > form > fieldset{
+        background-color: #ffffff;
+      }
+      .subscribe-form > form > fieldset > b{
+        font-family: Verdana;
+        font-size: 0.8em;
+        color: #3e3e3e;
+      }
+      .form-title{
+        font-family: bebasNeue;
+        font-size: 1.3em;
+        color: #3e3e3e;
+        text-transform: uppercase;
+      }
+      .required {
+        color: #ff0000;
+      }
+      .submit-btn {
+        margin-top: 15px;
       }
     </style>
 </head>
@@ -205,7 +248,7 @@
         <div class="header-elements">
           <div class="top-links">
             <a href="#sitemap">Sitemap</a>
-            <a href="#privacy">Privacy</a>
+            <a href="#privacy">Privacy policy</a>
             <a href="#accessibility">Accessibility</a>
           </div>
           <div class="top-title"><h1>BOOTWORLD</h1></div>          
@@ -246,7 +289,7 @@
           </div>
           <div class="shop-item">
             <span class="shop-body-title">Military boots</span>
-            <p>Hard-wearing Men's military boots, gsuaranteed to withstand all weathers. From only <span class="price">£69.99</span></p>
+            <p>Hard-wearing Men's military boots, guaranteed to withstand all weathers. From only <span class="price">£69.99</span></p>
           </div>
           <div class="shop-item">
             <span class="shop-body-title">Roman sandals</span>
@@ -263,12 +306,34 @@
           <div class="widget-content">
             <div class="title-header">
               <div class="bold-header">LATEST NEWS</div>
+              <div class="news-body">
+                <p><a href="">Our seasonal sale has kicked off again! make sure you stop by our online shop to pick up a bargain.</a></p>
+              </div>
+              <div class="news-footer"><p>Posted by: Joe</p></div>
             </div>
           </div>
         </div>
         <div class="widget">
-          <div class="title-header">
-            <div class="bold-header">SUBSCRIBE</div></div>
+          <div class="widget-content">
+            <div class="title-header">
+              <div class="bold-header">SUBSCRIBE</div>
+              <div class="subscribe-body">
+                <p>Sign up to our newsletter and receive exclusive offers by email weekly.</p>
+                <div class="subscribe-form">
+                  <form>
+                    <fieldset>
+                      <legend><span class="form-title">Sign up now!</span></legend>
+                      <b>Your name:</b><br>
+                      <input type="text"><br>
+                      <b>Email Address:<span class="required">*</span></b><br>
+                      <input type="text"><br>
+                      <input class="submit-btn" type="submit" value="Sign Up">
+                    </fieldset>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </aside>
     </div>
