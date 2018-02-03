@@ -8,6 +8,11 @@
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
     <link rel="stylesheet" href="/styles.css">
     <style>
+      /* Define the custom font */
+      @font-face {
+          font-family: bebasNeue;
+          src: url(fonts/BebasNeue-webfont.woff);
+      }
       * {
         box-sizing: border-box; 
       }
@@ -16,11 +21,23 @@
         min-height: 100vh;
         flex-direction: column;
         margin: 0;
-        width:90%;
+        width: 55%;
         margin-left:auto;
         margin-right:auto;
         border-left:2px solid #cccccc;
         border-right:2px solid #cccccc;
+      }
+      p {
+        font-family: Verdana;
+      }  
+      p > a {
+        color: green;
+      }
+      img {
+          max-width: 100%;
+          min-width: 100px;
+          height: auto;
+          width: auto\9; /* ie8 */
       }
       .container {
         display: inline-block;
@@ -44,6 +61,8 @@
       }
       #main > aside {
         order: 2;
+        padding: 0.5em;
+        margin-top:5px;
       }
       header {
         height: 25%;
@@ -53,26 +72,44 @@
         height: 15vh;
       }
       header, footer, article, nav {
-        padding: 1em;
+        padding: 0.5em;
       }
-
+      .top-title{
+        padding-left:10px;
+      }
+      .top-links {
+        float: right;
+      }
+      .top-links > a {
+        padding-right:10px;
+      }
       .topnav {
-          overflow: hidden;
+        overflow: hidden;
+        height: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 5px;
       }
 
       /* Style the links inside the navigation bar */
-      .topnav a {
+      .topnav a {          
           float: left;
           color: black;
           background-color: #cccccc;
           text-align: center;
-          padding: 10px 10px;
+          padding: 7px 15px;
+          margin-bottom: 5px;
           text-decoration: none;
           font-size: 17px;
-          margin-right: 10px;
-          -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-          -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-          box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+          margin-right: 20px;
+          -webkit-box-shadow: 2px 2px 1px 0px rgba(0, 0, 0, 1);
+          -moz-box-shadow: 2px 2px 1px 0px rgba(0, 0, 0, 1);
+          box-shadow: 2px 2px 1px 0px rgba(0, 0, 0, 1);
+          border-radius: 3px;
+          text-transform: uppercase;
+          font-family: bebasNeue;
+          font-size: 1.1em;
+          width: 10.5%;
       }
 
       /* Change the color of links on hover */
@@ -86,9 +123,15 @@
           background-color: #f6f6f6;
           color: black;
       }
-
+      .bold-header{
+        font-family: bebasNeue;
+        font-size: 2em;
+        color: #3e3e3e;
+        margin-bottom: 10px;
+      }
       .wrapper {
         display: flex;
+        padding: 15px;
       }
       .wrapper > div {
         /*font-size: 4vh;*/
@@ -96,7 +139,6 @@
         padding: .3em;
         border:solid 1px #dddddd;
         flex: 1;
-        height: 200px;
       }
       .widget {
         height: 45%;
@@ -111,16 +153,49 @@
       /* float left items */
       .img-holder{
         float:left;
+        height: 100%;
+        width: 50%;
+        padding: 5px;
       }
 
       /* float right items */
       .banner-contents{
-        float:right;
+        float:left
+        width: 40%;
+        padding: 5px;
+      }
+      .banner-text {
+        font-size: 1.25em;
       }
       .img-outer {
         border:solid 1px #dddddd;
-        height:170px;
-        width:320px;
+        width: 90%;
+      }
+      .body-content{
+        padding: 10px;
+        margin: 15px;
+        padding: .3em;
+        border: solid 1px #dddddd;
+        flex: 1;
+      }
+      .shop-body {
+        background-color: #dddddd;
+        padding:5px;
+      }
+      .price {
+        font-weight: bold;
+      }
+      .shop-body-title{
+        text-transform: uppercase;
+        font-family: bebasNeue;
+        font-size: 1.2em;
+        color: #016008;
+      }
+      .shop-body > p {
+        -webkit-margin-before: 0px;
+        -webkit-margin-after: 0px;
+        -webkit-margin-start: 0px;
+        -webkit-margin-end: 0px;
       }
     </style>
 </head>
@@ -128,11 +203,16 @@
 
     <header>
         <div class="header-elements">
-          <h1>BOOTWORLD</h1>
+          <div class="top-links">
+            <a href="#sitemap">Sitemap</a>
+            <a href="#privacy">Privacy</a>
+            <a href="#accessibility">Accessibility</a>
+          </div>
+          <div class="top-title"><h1>BOOTWORLD</h1></div>          
           <div class="topnav">
             <a class="active" href="#home">HOME</a>
             <a href="#shop">SHOP</a>
-            <a href="#news">NEWS</a>          
+            <a href="#news">NEWS</a>
             <a href="#about">ABOUT US</a>
             <a href="#contact">CONTACT US</a>
             <a href="#subscribe">SUBSCRIBE</a>
@@ -142,34 +222,55 @@
     <div class="wrapper">
       <div class="banner">
         <div class="img-holder">
-          <div class="img-outer">
-              IMAGE
-          </div>
-          
+          <div class="img-outer"><img src="images/boots.png"/></div>
         </div>
         <div class="banner-contents">
-          <div class="title-header">WELCOME TO BOOTWORLD</div>
-            <div class="banner-text">
-            <p>This is the ytext</p>
+          <div class="title-header">
+            <span class="bold-header">WELCOME TO BOOTWORLD</span>
           </div>
-        </div>      
-        
+          <div class="banner-text">
+            <p>BootWorld is the largest online footwear retailer in the UK. <a href="#">Our shop</a> always has stock of the latest designer footwear at the most competitive prices. Want to know more about us or our products, why not send us a <a href="#">message</a>.</p>
+          </div>
+        </div>        
       </div>    
     </div>
-    <div id="main">    
+    <div id="main" class="body-content">
       <article>
-        <div class="new-item title-header">NEW IN THE SHOP</div>
-      </article>
-      
+        <div class="new-item title-header">
+          <div class="bold-header">NEW IN THE SHOP</div>
+        </div>
+        <div class="shop-body">
+          <div class="shop-item">
+            <span class="shop-body-title">Classic cowboy boots</span>
+            <p>Stand out from the crowd in a pair of classic cowboy boots. Available for Ladies and Gents from only <span class="price">£49.99</span></p>
+          </div>
+          <div class="shop-item">
+            <span class="shop-body-title">Military boots</span>
+            <p>Hard-wearing Men's military boots, gsuaranteed to withstand all weathers. From only <span class="price">£69.99</span></p>
+          </div>
+          <div class="shop-item">
+            <span class="shop-body-title">Roman sandals</span>
+            <p>Get ready for summer with some stylish roman sandals. From only <span class="price">£39.99</span></p>
+          </div>
+          <div class="shop-item">
+            <span class="shop-body-title">Office shoes</span>
+            <p>You don't have to wear boring shoes to the office. Check out our new stock of Ladies and Gents fashionable office shoes from only <span class="price">£44.99</span></p>
+          </div>
+        </div>
+      </article>      
       <aside>
         <div class="widget">
-          <div class="title-header">LATEST NEWS</div>
+          <div class="widget-content">
+            <div class="title-header">
+              <div class="bold-header">LATEST NEWS</div>
+            </div>
+          </div>
         </div>
         <div class="widget">
-          <div class="title-header">SUBSCRIBE</div>
+          <div class="title-header">
+            <div class="bold-header">SUBSCRIBE</div></div>
         </div>
       </aside>
     </div>
     <footer>OUR ADDRESS</footer>
-
 </body>
