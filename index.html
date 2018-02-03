@@ -21,18 +21,26 @@
         min-height: 100vh;
         flex-direction: column;
         margin: 0;
-        width: 55%;
+        width: 90%;
         margin-left:auto;
         margin-right:auto;
         border-left:2px solid #cccccc;
         border-right:2px solid #cccccc;
+        font-size: 12vminpx;
       }
       p {
         font-family: Verdana;
-        font-size: 0.8em;
+        font-size: 0.95em;
         color: #3e3e3e;
+        -webkit-margin-before: 0.25em;
+        -webkit-margin-after: 2em;
+        -webkit-margin-start: 0px;
+        -webkit-margin-end: 0px;
       }  
       p > a, .top-links > a {
+        color: #016008;
+      }
+      .shop-item > p {
         color: #016008;
       }
       img {
@@ -40,6 +48,17 @@
           min-width: 100px;
           height: auto;
           width: auto\9; /* ie8 */
+      }
+      input {
+        margin-bottom: 10px;
+      }
+      input.field {
+        width:100%;
+      }
+      input.submit-btn {
+        border: 1px solid #989797;
+        border-radius: 3px;
+        padding: 4px 10px
       }
       .container {
         display: inline-block;
@@ -77,8 +96,10 @@
       header, footer, article, nav {
         padding: 0.5em;
       }
-      input {
-        margin-bottom: 10px;
+      .footer-address {
+        font-weight: bold;
+        font-size: 0.8em;
+        padding-left: 5px;
       }
       .top-title{
         padding-left: 10px;
@@ -120,7 +141,7 @@
           font-size: 1.1em;
           width: 10.5%;
           font-size: 15px;
-          font-size: 1vw;
+          font-size: 1.6vw;
       }
 
       /* Change the color of links on hover */
@@ -139,6 +160,14 @@
         font-size: 2em;
         color: #3e3e3e;
         margin-bottom: 10px;
+        margin-top: 5px;
+      }
+      .footer-bold-header {
+        font-family: bebasNeue;
+        font-size: 1.5em;
+        color: #3e3e3e;
+        padding-left: 5px;
+        margin-top: 5px;
       }
       .wrapper {
         display: flex;
@@ -165,21 +194,21 @@
       .img-holder{
         float:left;
         height: 100%;
-        width: 50%;
+        width: 45%;
         padding: 5px;
       }
 
       /* float right items */
       .banner-contents{
         float:right;
-        width: 50%;
+        width: 55%;
       }
       .banner-text {
         font-size: 1.25em;
       }
       .img-outer {
         border:solid 1px #dddddd;
-        width: 90%;
+        width: 95%;
       }
       .body-content{
         padding: 10px;
@@ -190,15 +219,16 @@
       }
       .shop-body {
         background-color: #dddddd;
-        padding:5px;
+        padding:10px;
       }
       .price {
         font-weight: bold;
+        color: #000000;
       }
       .shop-body-title{
         text-transform: uppercase;
         font-family: bebasNeue;
-        font-size: 1.5em;
+        font-size: 1.65em;
         color: #016008;
       }
       .shop-body > p {
@@ -216,9 +246,16 @@
         text-decoration: underline;
       }
       .news-footer{
-        padding-right:10px;
+        padding-right: 10px;
         float: right;
+        font-size: 14px;
         font-style: italic;
+      }
+      .subscribe-body > p {
+        padding-right: 5px;
+      }
+      .subscribe-form {
+        padding-right: 10px;
       }
       .subscribe-form > form > fieldset{
         background-color: #ffffff;
@@ -228,7 +265,7 @@
         font-size: 0.8em;
         color: #3e3e3e;
       }
-      .form-title{
+      .form-title {
         font-family: bebasNeue;
         font-size: 1.3em;
         color: #3e3e3e;
@@ -239,6 +276,13 @@
       }
       .submit-btn {
         margin-top: 15px;
+        background: linear-gradient(#ffffff, #dddddd);
+      }
+      .submit-btn:hover {
+        background: linear-gradient(#dddddd, #ffffff);
+      }
+      .push{
+        padding-bottom: 10px;
       }
     </style>
 </head>
@@ -304,18 +348,16 @@
       <aside>
         <div class="widget">
           <div class="widget-content">
-            <div class="title-header">
               <div class="bold-header">LATEST NEWS</div>
               <div class="news-body">
                 <p><a href="">Our seasonal sale has kicked off again! make sure you stop by our online shop to pick up a bargain.</a></p>
               </div>
-              <div class="news-footer"><p>Posted by: Joe</p></div>
-            </div>
+              <div class="push">&nbsp;<div class="news-footer"><p>Posted by: Joe</p></div></div>
+              
           </div>
         </div>
         <div class="widget">
           <div class="widget-content">
-            <div class="title-header">
               <div class="bold-header">SUBSCRIBE</div>
               <div class="subscribe-body">
                 <p>Sign up to our newsletter and receive exclusive offers by email weekly.</p>
@@ -324,18 +366,20 @@
                     <fieldset>
                       <legend><span class="form-title">Sign up now!</span></legend>
                       <b>Your name:</b><br>
-                      <input type="text"><br>
+                      <input class="field" type="text"><br>
                       <b>Email Address:<span class="required">*</span></b><br>
-                      <input type="text"><br>
+                      <input class="field" type="text"><br>
                       <input class="submit-btn" type="submit" value="Sign Up">
                     </fieldset>
                   </form>
                 </div>
               </div>
-            </div>
           </div>
         </div>
       </aside>
     </div>
-    <footer>OUR ADDRESS</footer>
+    <footer>
+      <div class="footer-bold-header">OUR ADDRESS</div>
+      <div class="footer-address"><p>Malet Street,<br> London, WC1E 7HX</p></div>
+    </footer>
 </body>
